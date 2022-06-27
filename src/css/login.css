@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1, h2, h3, h4 {
+    font-family: 'Comfortaa', cursive;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    background: white;
+    padding: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 13%;
+    margin-bottom: 13%;
+    
+}
+form > div {
+    margin-bottom: 20px;
+}
+form label {
+    width: 100%;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+form input {
+    background: #f2f2f2;
+    border: solid 1px #CCC;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 1.3em;
+    width: 100%;
+}
+form button {
+    background-color: rgb(79, 67, 182);
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 1.3em;
+    border: solid 1px #FFF;
+}
+form .error {
+    color: #c91111;
+    margin-bottom: 10px;
+}
