@@ -25,8 +25,9 @@ class Login extends React.Component {
         this.setState({password: ""});
     }
 
-    handleLogin () {
-        setAccessTokenCookie(this.state.username, this.state.username, this.placeholderFunction);
+    handleLogin (username,password) {
+        setAccessTokenCookie(username, password, this.placeholderFunction);
+        console.log("handleLogin called");
     }
 
     handleUserChange(event) {
@@ -50,6 +51,7 @@ class Login extends React.Component {
                         <input name="username"
                                 type="text"
                                 id="username"
+                                value={this.state.username}
                                 placeholder="username"
                                 onClick={this.handleUserChange}
                                 onKeyDown={this.handleUserChange}/> 
@@ -59,11 +61,12 @@ class Login extends React.Component {
                         <input name="password"
                                 type="password"
                                 id="password"
+                                value={this.state.password}
                                 placeholder="password"
                                 onClick={this.handlePassChange}
                                 onKeyDown={this.handlePassChange}/>
                     </div>
-                    <Link to="/" onClick={this.handleLogin}>Login</Link>
+                    <Link to="/" onClick={() => { this.handleLogin(this.state.username,this.state.password)}}>Login</Link>
                 </form>
             </div>
         
