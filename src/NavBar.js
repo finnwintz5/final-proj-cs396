@@ -9,7 +9,6 @@ class NavBar extends React.Component {
         // not intuitive.  Helps disambiguate between
         // what "this" refers to
         this.logout = this.logout.bind(this);
-        this.handleChange = this.handleChange.bind(this);
     }
 
     componentDidMount() {
