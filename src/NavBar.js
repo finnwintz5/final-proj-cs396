@@ -16,7 +16,6 @@ class NavBar extends React.Component {
     }
 
     logout () {
-        // deletes all existing cookies
         document.cookie.split(";").forEach((c) => {
             document.cookie = c
               .replace(/^ +/, "")
@@ -30,7 +29,7 @@ class NavBar extends React.Component {
                 <h1>{this.props.title}</h1>
                 <section>
                     <p>{ this.props.username }</p>
-                    <Link to="/login" className="blue" onClick={this.logout}>Sign out</Link>
+                    <Link to="/login" className="blue">Sign out</Link>
                 </section>
             </section>
         )

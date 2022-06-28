@@ -19,9 +19,11 @@ class App extends React.Component {
         }
         this.update = this.update.bind(this);
     }
+
     update (new_post) {
         this.setState({modal_post: new_post});
     }
+
     getProfileFromServer () {
         fetch('https://photos-and-friends.herokuapp.com/api/profile',{
             headers: getHeaders()
