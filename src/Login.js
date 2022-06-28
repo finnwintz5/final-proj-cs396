@@ -50,7 +50,6 @@ class Login extends React.Component {
     render () {
         return (
             <div>
-    
                 <nav id="Navigation">
                     <h1>Photos + Friends</h1>
                 </nav>
@@ -75,7 +74,7 @@ class Login extends React.Component {
                                 onClick={this.handlePassChange}
                                 onKeyDown={this.handlePassChange}/>
                     </div>
-                    <Link to="/" onClick={() => { this.handleLogin(this.state.username,this.state.password)}}>Login</Link>
+                    <Link to="/">Login</Link>
                 </form>
             </div>
         
