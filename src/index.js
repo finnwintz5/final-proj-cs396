@@ -7,9 +7,8 @@ import './css/style.css';
 import {hasCsrfToken, setAccessTokenCookie, getAccessTokenCookie} from './utils';
 
 function renderApp() {
-    let logged_in = !!getAccessTokenCookie();
     ReactDOM.render(
-        <App logged_in={logged_in}/>,
+        <App />,
         document.querySelector('div')
     );
 }
@@ -39,5 +38,5 @@ if (hasCsrfToken() && window.location.port !== '3000') {
     console.log(window.location.port === '3000')
     // this executes if the app is run via npm start
     console.log('Authentication handled via REST API Token.')
-    renderApp();
+    setAccessTokenCookie('webdev', 'password', renderApp);
 }

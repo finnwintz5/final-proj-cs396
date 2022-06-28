@@ -21,7 +21,7 @@ function setCookie(name, val) {
     document.cookie = name + "=" + val + ";" + expires;
   }
 
-export function setAccessTokenCookie(username, password) {
+export function setAccessTokenCookie(username, password, callback) {
     const postData = {
         "username": username,
         "password": password
@@ -37,6 +37,7 @@ export function setAccessTokenCookie(username, password) {
         .then(data => {
             const token = data.access_token;
             setCookie('access_token_cookie_js', token); 
+            callback();
         });
 }
 

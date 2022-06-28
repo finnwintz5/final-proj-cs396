@@ -7,21 +7,18 @@ import Stories from './Stories';
 import Modal from './Modal';
 import Login from './Login';
 import {getHeaders} from './utils';
-import { Navigate } from 'react-router-dom';
 
 class App extends React.Component {  
 
     constructor(props) {
         super(props);
         this.getProfileFromServer();
-        this.changeLogin();
         this.state = {
             user: {},
             modal_post: null
         }
         this.update = this.update.bind(this);
     }
-    
 
     update (new_post) {
         this.setState({modal_post: new_post});
@@ -36,15 +33,6 @@ class App extends React.Component {
                 user: data
             })
         })
-    }
-
-    changeLogin () {
-        if (!this.props.logged_in) {
-            return <Navigate to='/login' />;
-        }
-        else {
-            return <Navigate to='/' />;
-        }
     }
 
     home () {
