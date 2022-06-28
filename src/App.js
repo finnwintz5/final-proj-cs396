@@ -19,11 +19,9 @@ class App extends React.Component {
         }
         this.update = this.update.bind(this);
     }
-
     update (new_post) {
         this.setState({modal_post: new_post});
     }
-
     getProfileFromServer () {
         fetch('https://photos-and-friends.herokuapp.com/api/profile',{
             headers: getHeaders()
@@ -34,7 +32,6 @@ class App extends React.Component {
             })
         })
     }
-
     home () {
         return (
         <div>
@@ -50,7 +47,6 @@ class App extends React.Component {
         </div>
         )
     }
-
     login () {
         return (
             <div>
@@ -58,7 +54,6 @@ class App extends React.Component {
             </div>
         )
     }
-
     render () {
         return (
             <Router>
@@ -70,5 +65,4 @@ class App extends React.Component {
         );
     }
 }
-
 export default App;

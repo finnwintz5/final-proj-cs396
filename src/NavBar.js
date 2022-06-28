@@ -16,11 +16,12 @@ class NavBar extends React.Component {
     }
 
     logout () {
-        // document.cookie.split(";").forEach((c) => {
-        //     document.cookie = c
-        //       .replace(/^ +/, "")
-        //       .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-        //   });
+        // deletes all existing cookies
+        document.cookie.split(";").forEach((c) => {
+            document.cookie = c
+              .replace(/^ +/, "")
+              .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+          });
     }
 
     render () {
