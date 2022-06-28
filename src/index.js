@@ -7,10 +7,7 @@ import './css/style.css';
 import {hasCsrfToken, setAccessTokenCookie, getAccessTokenCookie} from './utils';
 
 function renderApp() {
-    let logged_in = FALSE;
-    if (getAccessTokenCookie()) {
-        logged_in = TRUE;
-    }
+    let logged_in = !!getAccessTokenCookie();
     ReactDOM.render(
         <App logged_in={logged_in}/>,
         document.querySelector('div')
