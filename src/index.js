@@ -4,7 +4,7 @@ import App from './App';
 import './css/login.css';
 import './css/style.css';
 // import './index.css';
-import {hasCsrfToken, setAccessTokenCookie, getAccessTokenCookie} from './utils';
+import {hasCsrfToken, setAccessTokenCookie} from './utils';
 
 function renderApp() {
     ReactDOM.render(
