@@ -19,7 +19,7 @@ class Login extends React.Component {
     }
 
     handleLogin () {
-        setAccessTokenCookie(this.state.username, this.state.username);
+        setAccessTokenCookie(this.state.username, this.state.username, console.log("Access Token set"));
     }
 
     handleUserChange(event) {
