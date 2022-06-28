@@ -44,8 +44,8 @@ class Login extends React.Component {
                                 type="text"
                                 id="username"
                                 placeholder="username"
-                                onClick={this.handleUserChange()}
-                                onKeyDown={this.handleUserChange()}/> 
+                                onClick={this.handleUserChange}
+                                onKeyDown={this.handleUserChange}/> 
                     </div>
                     <div>
                         <label htmlFor="password">Password</label>  
@@ -53,10 +53,10 @@ class Login extends React.Component {
                                 type="password"
                                 id="password"
                                 placeholder="password"
-                                onClick={this.handlePassChange()}
-                                onKeyDown={this.handlePassChange()}/>
+                                onClick={this.handlePassChange}
+                                onKeyDown={this.handlePassChange}/>
                     </div>
-                    <Link to="/" onClick={this.handleLogin()}>Login</Link>
+                    <Link to="/" onClick={this.handleLogin}>Login</Link>
                 </form>
             </div>
         
