@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom"; 
-import {hasCsrfToken, setAccessTokenCookie} from './utils';
+import {hasCsrfToken, setAccessTokenCookie, getAccessTokenCookie} from './utils';
 
 class Login extends React.Component {
     constructor(props) {
@@ -26,8 +26,15 @@ class Login extends React.Component {
     }
 
     handleLogin (username,password) {
-        setAccessTokenCookie(username, password, this.placeholderFunction);
         console.log("handleLogin called");
+        if (!(hasCsrfToken() || getAccessTokenCookie())) {
+            setAccessTokenCookie(username, password, this.placeholderFunction);
+            console.log("cookie does not already exists");
+        }
+        else {
+            console.log("cookie does already exists");
+        }
+        
     }
 
     handleUserChange(event) {
