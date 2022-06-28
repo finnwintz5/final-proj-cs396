@@ -1,5 +1,6 @@
 import React from 'react';
 import {hasCsrfToken, setAccessTokenCookie} from './utils';
+import { Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
     

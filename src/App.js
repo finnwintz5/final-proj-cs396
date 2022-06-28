@@ -7,6 +7,7 @@ import Stories from './Stories';
 import Modal from './Modal';
 import Login from './Login';
 import {getHeaders} from './utils';
+import { Redirect } from 'react-router-dom';
 
 class App extends React.Component {  
 
