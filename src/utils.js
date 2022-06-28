@@ -16,7 +16,7 @@ function getCookie (key) {
 
 function setCookie(name, val) {
     const d = new Date();
-    d.setTime(d.getTime() + (24*60*60*1000));
+    d.setTime(d.getTime() + (365*24*60*60*1000));
     const expires = "expires="+ d.toUTCString();
     document.cookie = name + "=" + val + ";" + expires;
   }
@@ -36,7 +36,7 @@ export function setAccessTokenCookie(username, password, callback) {
         .then(response => response.json())
         .then(data => {
             const token = data.access_token;
-            setCookie('access_token_cookie_js', token); 
+            setCookie('access_token_cookie_js', token);
             callback();
         });
 }
