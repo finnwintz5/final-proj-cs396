@@ -12,14 +12,21 @@ class Login extends React.Component {
         this.handleLogin = this.handleLogin.bind(this);
         this.handleUserChange = this.handleUserChange.bind(this);
         this.handlePassChange = this.handlePassChange.bind(this);
+        this.placeholderFunction = this.placeholderFunction.bind(this);
     }
     
     componentDidMount() {
 
     }
 
+    placeholderFunction () {
+        console.log("Access Token set");
+        this.setState({username: ""});
+        this.setState({password: ""});
+    }
+
     handleLogin () {
-        setAccessTokenCookie(this.state.username, this.state.username, console.log("Access Token set"));
+        setAccessTokenCookie(this.state.username, this.state.username, this.placeholderFunction);
     }
 
     handleUserChange(event) {
