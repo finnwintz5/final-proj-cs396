@@ -7,7 +7,7 @@ import Stories from './Stories';
 import Modal from './Modal';
 import Login from './Login';
 import {getHeaders} from './utils';
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 class App extends React.Component {  
 
@@ -40,10 +40,10 @@ class App extends React.Component {
 
     changeLogin () {
         if (!this.props.logged_in) {
-            return <Redirect to='/login' />;
+            return <Navigate to='/login' />;
         }
         else {
-            return <Redirect to='/' />;
+            return <Navigate to='/' />;
         }
     }
 

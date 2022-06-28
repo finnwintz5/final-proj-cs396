@@ -1,6 +1,6 @@
 import React from 'react';
 import {hasCsrfToken, setAccessTokenCookie} from './utils';
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 class Login extends React.Component {
     
@@ -29,7 +29,7 @@ class Login extends React.Component {
 
     login () {
         setAccessTokenCookie(this.state.username, this.state.username);
-        return <Redirect to='/' />;
+        return <Navigate to='/' />;
     }
 
     render () {
