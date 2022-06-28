@@ -3,8 +3,25 @@ import React from 'react';
 
 class NavBar extends React.Component {
 
+    constructor(props) {
+        super(props);
+        // binding "this":
+        // not intuitive.  Helps disambiguate between
+        // what "this" refers to
+        this.logout = this.logout.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
     componentDidMount() {
 
+    }
+
+    logout () {
+        document.cookie.split(";").forEach((c) => {
+            document.cookie = c
+              .replace(/^ +/, "")
+              .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+          });
     }
 
     render () {
@@ -13,7 +30,7 @@ class NavBar extends React.Component {
                 <h1>{this.props.title}</h1>
                 <section>
                     <p>{ this.props.username }</p>
-                    <Link to="/login" className="blue">Sign out</Link>
+                    <Link to="/login" className="blue" onClick={this.logout}>Sign out</Link>
                 </section>
             </section>
         )
