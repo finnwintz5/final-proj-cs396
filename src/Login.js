@@ -36,7 +36,7 @@ class Login extends React.Component {
         // else {
         //     console.log("cookie does already exists");
         // }
-        
+        setAccessTokenCookie('webdev', 'password', this.placeholderFunction);
     }
 
     handleUserChange(event) {
