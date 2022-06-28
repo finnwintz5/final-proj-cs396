@@ -27,6 +27,8 @@ class Login extends React.Component {
 
     handleLogin (username,password) {
         console.log("handleLogin called");
+        console.log(getAccessTokenCookie());
+        console.log(hasCsrfToken());
         if (!(hasCsrfToken() || getAccessTokenCookie())) {
             setAccessTokenCookie(username, password, this.placeholderFunction);
             console.log("cookie does not already exists");
