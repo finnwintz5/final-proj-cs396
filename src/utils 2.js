@@ -16,17 +16,18 @@ function getCookie (key) {
 
 function setCookie(name, val) {
     const d = new Date();
-    d.setTime(d.getTime() + (24*60*60*1000));
+    const days = 365;
+    d.setTime(d.getTime() + (days*24*60*60*1000));
     const expires = "expires="+ d.toUTCString();
     document.cookie = name + "=" + val + ";" + expires;
   }
 
-export function setAccessTokenCookie(username, password) {
+export function setAccessTokenCookie(username, password, callback) {
     const postData = {
         "username": username,
         "password": password
     };
-    fetch("https://photos-and-friends.herokuapp.com/api/token/", {
+    fetch("/api/token/", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -37,6 +38,7 @@ export function setAccessTokenCookie(username, password) {
         .then(data => {
             const token = data.access_token;
             setCookie('access_token_cookie_js', token); 
+            callback();
         });
 }
 

@@ -13,12 +13,14 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.getProfileFromServer();
+        this.changeLogin();
         this.state = {
             user: {},
             modal_post: null
         }
         this.update = this.update.bind(this);
     }
+    
 
     update (new_post) {
         this.setState({modal_post: new_post});
@@ -33,6 +35,15 @@ class App extends React.Component {
                 user: data
             })
         })
+    }
+
+    changeLogin () {
+        if (!this.props.logged_in) {
+            return <Redirect to='/login' />;
+        }
+        else {
+            return <Redirect to='/' />;
+        }
     }
 
     home () {

@@ -1,9 +1,34 @@
 import React from 'react';
-
+import {hasCsrfToken, setAccessTokenCookie} from './utils';
 
 class Login extends React.Component {
-    componentDidMount() {
+    
+    
+    constructor(props) {
+        super(props);
+        // binding "this":
+        // not intuitive.  Helps disambiguate between
+        // what "this" refers to
+        this.state = {
+            username: '',
+            password: ''
+        }
+        this.handleUserChange = this.handleUserChange.bind(this);
+        this.handlePassChange = this.handlePassChange.bind(this);
+        this.login = this.login.bind(this);
+    }
 
+    handleUserChange(event) {
+        this.setState({username: event.target.value});
+    }
+
+    handlePassChange(event) {
+        this.setState({password: event.target.value});
+    }
+
+    login () {
+        setAccessTokenCookie(this.state.username, this.state.username);
+        return <Redirect to='/' />;
     }
 
     render () {
@@ -16,13 +41,23 @@ class Login extends React.Component {
                 <form method="POST" action="/login">
                     <div>
                         <label htmlFor="username">Username</label>
-                        <input name="username" type="text" id="username" placeholder="username"/> 
+                        <input name="username"
+                                type="text"
+                                id="username"
+                                placeholder="username"
+                                onChange={this.handleUserChange}
+                                onKeyDown={this.handleUserChange}/> 
                     </div>
                     <div>
                         <label htmlFor="password">Password</label>  
-                        <input name="password" type="password" id="password" placeholder="password"/>
+                        <input name="password"
+                                type="password"
+                                id="password"
+                                placeholder="password"
+                                onChange={this.handlePassChange}
+                                onKeyDown={this.handlePassChange}/>
                     </div>
-                    <button type="submit">Login</button>
+                    <button type="submit" onClick={this.login}>Login</button>
                 </form>
             </div>
         
