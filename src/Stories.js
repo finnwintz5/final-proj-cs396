@@ -12,7 +12,7 @@ class Stories extends React.Component {
         this.getStoriesFromServer()
     }
     getStoriesFromServer() {
-        fetch('/api/stories',{
+        fetch('https://photos-and-friends.herokuapp.com/api/stories',{
             headers: getHeaders()
         }).then(response => response.json())
         .then(data => {

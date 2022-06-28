@@ -25,7 +25,7 @@ class App extends React.Component {
     }
 
     getProfileFromServer () {
-        fetch('/api/profile',{
+        fetch('https://photos-and-friends.herokuapp.com/api/profile',{
             headers: getHeaders()
         }).then(response => response.json())
         .then(data => {

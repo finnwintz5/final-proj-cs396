@@ -13,7 +13,7 @@ class Posts extends React.Component {
         this.modal_func = this.props.modal_func.bind(this);
     }
     getPostsFromServer() {
-        fetch('/api/posts',{
+        fetch('https://photos-and-friends.herokuapp.com/api/posts',{
             headers: getHeaders()
         }).then(response => response.json())
         .then(data => {

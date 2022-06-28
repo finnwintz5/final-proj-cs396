@@ -17,7 +17,7 @@ class Modal extends React.Component {
         this.modal_func = this.props.modal_func.bind(this);
     }
     getPost () {
-        const url = '/api/posts/' + this.props.modal_post_id;
+        const url = 'https://photos-and-friends.herokuapp.com/api/posts/' + this.props.modal_post_id;
         fetch(url, {
             headers: getHeaders()
         }).then(response => response.json())

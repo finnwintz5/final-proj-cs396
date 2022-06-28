@@ -29,7 +29,7 @@ class FollowButton extends React.Component {
     }
 
     createFollow () {
-        const url = '/api/following/';
+        const url = 'https://photos-and-friends.herokuapp.com/api/following/';
         const postData = {
             "user_id": this.props.user.id
         };
@@ -49,7 +49,7 @@ class FollowButton extends React.Component {
     }
 
     removeFollow () {
-        const url = `/api/following/${this.state.following_id}`;
+        const url = `https://photos-and-friends.herokuapp.com/api/following/${this.state.following_id}`;
         console.log('remove follow',url);
         fetch(url, {
             headers: getHeaders(),

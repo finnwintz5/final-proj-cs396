@@ -26,7 +26,7 @@ class LikeButton extends React.Component {
     }
 
     createLike () {
-        const url = '/api/posts/likes';
+        const url = 'https://photos-and-friends.herokuapp.com/api/posts/likes';
         const postData = {
             "post_id": this.props.postId
         };
@@ -44,7 +44,7 @@ class LikeButton extends React.Component {
     }
 
     removeLike () {
-        const url = '/api/posts/likes/' + this.props.likeId;
+        const url = 'https://photos-and-friends.herokuapp.com/api/posts/likes/' + this.props.likeId;
         fetch(url, {
             headers: getHeaders(),
             method: 'DELETE'

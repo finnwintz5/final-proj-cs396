@@ -11,7 +11,7 @@ class Suggestions extends React.Component {
         this.getSuggestionsFromServer()
     }
     getSuggestionsFromServer() {
-        fetch('/api/suggestions',{
+        fetch('https://photos-and-friends.herokuapp.com/api/suggestions',{
             headers: getHeaders()
         }).then(response => response.json())
         .then(data => {

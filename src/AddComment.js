@@ -25,7 +25,7 @@ class AddComment extends React.Component {
     }
 
     createComment (text) {
-        const url = '/api/comments';
+        const url = 'https://photos-and-friends.herokuapp.com/api/comments';
         const comment_text = text;
         const postData = {
             "post_id": this.props.postId,
