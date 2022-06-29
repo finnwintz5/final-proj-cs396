@@ -74,7 +74,7 @@ class Login extends React.Component {
                                 onClick={this.handlePassChange}
                                 onKeyDown={this.handlePassChange}/>
                     </div>
-                    <Link to="/" onClick={this.handleLogin(this.state.username,this.state.password)}>Login</Link>
+                    <Link to="/" onClick={() => { this.handleLogin(this.state.username,this.state.password)}}>Login</Link>
                 </form>
             </div>
         
