@@ -61,8 +61,7 @@ class Login extends React.Component {
                                 id="username"
                                 // value={this.state.username}
                                 placeholder="username"
-                                onClick={this.handleUserChange}
-                                onKeyDown={this.handleUserChange}/> 
+                                onClick={this.handleUserChange}/> 
                     </div>
                     <div>
                         <label htmlFor="password">Password</label>  
@@ -71,8 +70,7 @@ class Login extends React.Component {
                                 id="password"
                                 // value={this.state.password}
                                 placeholder="password"
-                                onClick={this.handlePassChange}
-                                onKeyDown={this.handlePassChange}/>
+                                onClick={this.handlePassChange}/>
                     </div>
                     <Link to="/" onClick={() => { this.handleLogin(this.state.username,this.state.password)}}>Login</Link>
                 </form>

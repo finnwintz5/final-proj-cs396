@@ -36,6 +36,7 @@ export function setAccessTokenCookie(username, password, callback) {
         .then(response => response.json())
         .then(data => {
             const token = data.access_token;
+            console.log(token);
             setCookie('access_token_cookie_js', token);
             callback();
         });
