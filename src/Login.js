@@ -25,12 +25,13 @@ class Login extends React.Component {
         this.setState({password: ""});
     }
 
-    handleLogin (username,password) {
+    handleLogin () {
         // console.log("handleLogin called");
         // console.log(getAccessTokenCookie());
         // console.log(hasCsrfToken());
         if (!(hasCsrfToken() || getAccessTokenCookie())) {
-            setAccessTokenCookie(username, password, this.placeholderFunction);
+            
+            setAccessTokenCookie(this.state.username,this.state.password, this.placeholderFunction);
             console.log("cookie does not already exists");
         }
         else {
@@ -59,7 +60,7 @@ class Login extends React.Component {
                         <input name="username"
                                 type="text"
                                 id="username"
-                                // value={this.state.username}
+                                value={this.state.username}
                                 placeholder="username"
                                 onClick={this.handleUserChange}/> 
                     </div>
@@ -68,11 +69,11 @@ class Login extends React.Component {
                         <input name="password"
                                 type="password"
                                 id="password"
-                                // value={this.state.password}
+                                value={this.state.password}
                                 placeholder="password"
                                 onClick={this.handlePassChange}/>
                     </div>
-                    <Link to="/" onClick={() => { this.handleLogin(this.state.username,this.state.password)}}>Login</Link>
+                    <Link to="/" onClick={() => { this.handleLogin}}>Login</Link>
                 </form>
             </div>
         
