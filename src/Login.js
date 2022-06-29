@@ -28,14 +28,14 @@ class Login extends React.Component {
         // console.log("handleLogin called");
         // console.log(getAccessTokenCookie());
         // console.log(hasCsrfToken());
-        // if (!(hasCsrfToken() || getAccessTokenCookie())) {
-        //     setAccessTokenCookie(username, password, this.placeholderFunction);
-        //     console.log("cookie does not already exists");
-        // }
-        // else {
-        //     console.log("cookie does already exists");
-        // }
-        //setAccessTokenCookie('webdev', 'password', this.placeholderFunction);
+        if (!(hasCsrfToken() || getAccessTokenCookie())) {
+            setAccessTokenCookie(username, password, this.placeholderFunction);
+            console.log("cookie does not already exists");
+        }
+        else {
+            console.log("cookie does already exists");
+        }
+        // setAccessTokenCookie('webdev', 'password', this.placeholderFunction);
     }
 
     handleUserChange(event) {
@@ -73,7 +73,7 @@ class Login extends React.Component {
                                 onClick={this.handlePassChange}
                                 onKeyDown={this.handlePassChange}/>
                     </div>
-                    <Link to="/">Login</Link>
+                    <Link to="/" onClick={this.handleLogin}>Login</Link>
                 </form>
             </div>
         
