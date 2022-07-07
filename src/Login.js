@@ -34,7 +34,7 @@ class Login extends React.Component {
         console.log("handleLogin password: " + password)
         console.log("handleLogin this.state.password: " + this.state.password);
         if (!(hasCsrfToken() || getAccessTokenCookie())) {
-            setAccessTokenCookie(username,password, this.placeholderFunction);
+            await setAccessTokenCookie(username,password, this.placeholderFunction);
             console.log("cookie does not already exists");
         }
         else {
