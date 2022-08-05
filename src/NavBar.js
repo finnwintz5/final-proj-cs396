@@ -29,7 +29,7 @@ class NavBar extends React.Component {
                 <h1>{this.props.title}</h1>
                 <section>
                     <p>{ this.props.username }</p>
-                    <Link to="/login" className="blue">Sign out</Link>
+                    <Link className="blue">Sign out</Link>
                 </section>
             </section>
         )
