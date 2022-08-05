@@ -81,7 +81,6 @@ class Login extends React.Component {
                     <Link to="/" onClick={() => { this.handleLogin(this.state.username,this.state.password)}}>Login</Link>
                 </form>
             </div>
-        
             )
     }
 
