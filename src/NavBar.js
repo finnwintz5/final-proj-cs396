@@ -29,7 +29,7 @@ class NavBar extends React.Component {
                 <h1>{this.props.title}</h1>
                 <section>
                     <p>{ this.props.username }</p>
-                    <p className="blue">Sign out</p>
+                    <a className="blue">Sign out</a>
                 </section>
             </section>
         )
